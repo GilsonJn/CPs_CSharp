@@ -22,6 +22,7 @@ namespace CP1_Cadastro
             InitializeComponent();
         }
 
+        //--- AÇÃO: ADICIONAR ---
         private void BtnAdicionar_Click(object sender, RoutedEventArgs e)
         {
             if (int.TryParse(EntradaID.Text, out int id))
@@ -38,7 +39,7 @@ namespace CP1_Cadastro
                 {
                     MessageBox.Show("Cadastrado com sucesso!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
                     LimparCampos();
-                    AtualizarGrid(); // Atualiza a tabela automaticamente
+                    AtualizarGrid(); 
                 }
                 else
                 {
@@ -57,19 +58,18 @@ namespace CP1_Cadastro
             AtualizarGrid();
         }
 
-        // --- AÇÃO: BUSCAR (Botão Laranja do Topo) ---
+        // --- AÇÃO: BUSCAR ---
         private void BtnBuscarTopo_Click(object sender, RoutedEventArgs e)
         {
             RealizarBusca(EntradaID.Text);
         }
 
-        // --- AÇÃO: BUSCAR (Botão Azul ao lado da Tabela) ---
+        // --- AÇÃO: BUSCAR POR ID ---
         private void BtnBuscarFiltro_Click(object sender, RoutedEventArgs e)
         {
             RealizarBusca(EntradaBuscaID.Text);
         }
 
-        // Lógica centralizada para buscar, já que temos 2 botões de busca
         private void RealizarBusca(string idTexto)
         {
             if (int.TryParse(idTexto, out int id))
@@ -128,7 +128,6 @@ namespace CP1_Cadastro
 
         private void AtualizarGrid()
         {
-            // O WPF precisa que você limpe a fonte (null) e reatribua para enxergar as mudanças do Dictionary
             GridDados.ItemsSource = null;
             GridDados.ItemsSource = cadastro.ListarTodos();
         }
