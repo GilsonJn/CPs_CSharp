@@ -9,7 +9,7 @@ namespace CP2_Crud
 {
     public partial class MainWindow : Window
     {
-        private string stringConexao = "Server=localhost;Database=Escola;Uid=root;Pwd=Mysql@fr4nk13;";
+        private string stringConexao = "Server=localhost;Database=Escola;Uid=root;Pwd=...;";
 
         public MainWindow()
         {
