@@ -1,0 +1,39 @@
+﻿<Window x:Class="CP2_Crud.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CRUD Escola - MySQL" Height="464" Width="700" WindowStartupLocation="CenterScreen">
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="0,0,15,0">
+            <TextBlock Text="Menu de Operações" FontSize="18" FontWeight="Bold" Margin="0,0,0,15" HorizontalAlignment="Center"/>
+
+            <TextBlock Text="ID (Apenas para Atualizar/Remover/Buscar):" FontSize="11" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtId" Height="25" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Nome:" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtNome" Height="25" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Idade:" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtIdade" Height="25" Margin="0,0,0,15"/>
+
+            <Button Content="1 - Inserir Aluno" Click="BtnInserir_Click" Height="30" Margin="0,0,0,5" Background="#22C55E" Foreground="White"/>
+            <Button Content="2 - Listar Alunos" Click="BtnListar_Click" Height="30" Margin="0,0,0,5" Background="#3B82F6" Foreground="White"/>
+            <Button Content="3 - Atualizar Aluno" Click="BtnAtualizar_Click" Height="30" Margin="0,0,0,5" Background="#F59E0B" Foreground="White"/>
+            <Button Content="4 - Remover Aluno" Click="BtnRemover_Click" Height="30" Margin="0,0,0,5" Background="#EF4444" Foreground="White"/>
+            <Button Content="Bônus - Buscar por ID" Click="BtnBuscar_Click" Height="30" Margin="0,0,0,5" Background="#8B5CF6" Foreground="White"/>
+            <Button Content="5 - Sair" Click="BtnSair_Click" Height="30" Background="#64748B" Foreground="White"/>
+        </StackPanel>
+
+        <DataGrid x:Name="dgAlunos" Grid.Column="1" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="*"/>
+                <DataGridTextColumn Header="Idade" Binding="{Binding Idade}" Width="80"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
