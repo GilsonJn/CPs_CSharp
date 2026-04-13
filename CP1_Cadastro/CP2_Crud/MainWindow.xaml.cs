@@ -2,7 +2,6 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-// IMPORTANTE: A biblioteca do SQL Server do PDF
 using System.Data.SqlClient;
 using System.Windows;
 
@@ -10,7 +9,6 @@ namespace CP2_Crud
 {
     public partial class MainWindow : Window
     {
-        // Substitua "sua_senha_aqui" pela senha que você usa para entrar no MySQL Workbench (geralmente é root, admin ou vazia)
         private string stringConexao = "Server=localhost;Database=Escola;Uid=root;Pwd=Mysql@fr4nk13;";
 
         public MainWindow()
@@ -18,9 +16,7 @@ namespace CP2_Crud
             InitializeComponent();
         }
 
-        // ==========================================
-        // 1. INSERIR (INSERT)
-        // ==========================================
+        // 1. INSERIR 
         private void BtnInserir_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -45,9 +41,7 @@ namespace CP2_Crud
             }
         }
 
-        // ==========================================
-        // 2. LISTAR (SELECT)
-        // ==========================================
+        // 2. LISTAR 
         private void BtnListar_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -80,9 +74,7 @@ namespace CP2_Crud
             }
         }
 
-        // ==========================================
-        // 3. ATUALIZAR (UPDATE)
-        // ==========================================
+        // 3. ATUALIZAR 
         private void BtnAtualizar_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -113,9 +105,7 @@ namespace CP2_Crud
             }
         }
 
-        // ==========================================
-        // 4. REMOVER (DELETE)
-        // ==========================================
+        // 4. REMOVER
         private void BtnRemover_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -144,9 +134,7 @@ namespace CP2_Crud
             }
         }
 
-        // ==========================================
-        // ⭐ BÔNUS: BUSCAR POR ID
-        // ==========================================
+        // BÔNUS: BUSCAR POR ID
         private void BtnBuscar_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -181,9 +169,7 @@ namespace CP2_Crud
             }
         }
 
-        // ==========================================
         // 5. SAIR E AUXILIARES
-        // ==========================================
         private void BtnSair_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
